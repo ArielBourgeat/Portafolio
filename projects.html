@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Project Archive - Ariel Bourgeat</title>
+
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="projects.css">
+</head>
+
+<body id="projects-page">
+
+<div class="custom-cursor"></div>
+
+<header class="nav nav-projects">
+    <div class="menu" onclick="toggleMenu()">☰</div>
+
+    <h1 class="nav-projects-title">
+        PROJECT ARCHIVE →
+    </h1>
+
+    <div class="nav-projects-right">
+        <div class="nav-projects-clock" id="projectsClock"></div>
+        <a href="home.html" class="logo">
+            <img src="Images/logo blanco negro.png" alt="Ariel Bourgeat">
+        </a>
+    </div>
+</header>
+
+
+
+<main class="projects-main">
+
+    <!-- LIGHT / DARK MODE TOGGLE -->
+    <div class="theme-toggle-vertical">
+        <button class="theme-toggle-btn" data-theme="light">LIGHT</button>
+        <p>|</p>
+        <button class="theme-toggle-btn active" data-theme="dark">DARK</button>
+    </div>
+
+    <!-- ===== VERTICAL LOOP CAROUSEL ===== -->
+
+    <section class="projects-carousel-wrapper">
+        <div class="projects-carousel-window">
+            <div class="projects-carousel-track" id="carouselTrack">
+
+                <a href="project-cave.html" class="project-card" data-title="Stylized Cave &amp; Town. 2024.">
+                    <img src="Images/ariel-bourgeat-textured.jpg" alt="Stylized Cave &amp; Town project thumbnail">
+                    <button class="project-review-btn">REVIEW</button>
+                </a>
+
+                <a href="project-horror.html" class="project-card" data-title="Horror Movie Poster. 2023.">
+                    <img src="Images/Poster-Pelicula-de-terror.png" alt="Horror movie poster project thumbnail">
+                    <button class="project-review-btn">REVIEW</button>
+                </a>
+
+                <a href="project-fitme.html" class="project-card" data-title="FitMe Magazine Cover. 2022.">
+                    <img src="Images/FitMeMagazine.png" alt="FitMe Magazine project thumbnail">
+                    <button class="project-review-btn">REVIEW</button>
+                </a>
+
+                <a href="project-aliens.html" class="project-card" data-title="Aliens Building Visual. 2024.">
+                    <img src="Images/ariel-bourgeat-alines-building-1.jpg" alt="Aliens Building project thumbnail">
+                    <button class="project-review-btn">REVIEW</button>
+                </a>
+
+                <a href="project-tbhc.html" class="project-card" data-title="TBHC Illustration. 2024.">
+                    <img src="Images/ariel-bourgeat-tbhc.jpg" alt="TBHC illustration project thumbnail">
+                    <button class="project-review-btn">REVIEW</button>
+                </a>
+
+                <a href="project-app.html" class="project-card" data-title="Fitness and organization App Concept. 2024.">
+                    <img src="Images/ariel-bourgeat-tbhc.jpg" alt="Fitness and organization App Concept project thumbnail">
+                    <button class="project-review-btn">REVIEW</button>
+                </a>
+
+            </div>
+        </div>
+
+        <div class="project-title-container">
+            <p id="projectTitle" class="project-title-text"></p>
+        </div>
+    </section>
+
+</main>
+
+<!-- OVERLAY MENU (MISMO DE HOME) -->
+<!-- Overlay Menu -->
+<div class="menu-overlay" id="menuOverlay">
+    <div class="menu-header">
+        <button class="menu-close same-spot" onclick="toggleMenu()">✕</button>
+        <h1>ARIEL BOURGEAT</h1>
+    </div>
+
+
+    <div class="menu-content">
+        <ul class="menu-links">
+            <li><a href="index.html" onclick="toggleMenu()">HOME.</a></li>
+            <li><a href="About.html" onclick="toggleMenu()">ABOUT.</a></li>
+            <li><a href="projects.html" onclick="toggleMenu()">PROJECTS.</a></li>
+            <li><a href="index.html#contact" onclick="toggleMenu()">CONTACT.</a></li>
+        </ul>
+
+
+        <div class="menu-visuals">
+            <div class="binary-bg" id="binaryBg">
+                <span>0</span><span>1</span><span>1</span><span>0</span><span>1</span><span>0</span>
+                <span>1</span><span>0</span><span>0</span><span>1</span><span>1</span><span>0</span>
+                <span>0</span><span>1</span><span>1</span><span>0</span><span>1</span><span>0</span>
+            </div>
+
+            <div class="menu-character">
+                <img src="Images/logo blanco negro.png" alt="Logoblanconegro" class="">
+            </div>
+        </div>
+    </div>
+
+    <div class="menu-footer">
+        2026 All Rights Reserved. Ariel Bourgeat
+    </div>
+</div>
+
+<script src="projects.js"></script>
+</body>
+</html>

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Ariel Bourgeat - Portfolio</title>
+    <link rel="stylesheet" href="styles.css" >
+    <link rel="icon" type="png" href="Images\Ariel_Logo-removebg-preview.png">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@800&family=Space+Grotesk:wght@700&family=Oswald:wght@700&family=Montserrat:wght@800&family=Bebas+Neue&display=swap" rel="stylesheet">
+</head>
+
+<body id="home">
+    <!-- ===== INTRO ===== -->
+<div class="intro-overlay" id="introOverlay">
+    <div class="intro-content">
+        <h1 class="intro-title">ARIEL BOURGEAT</h1>
+        <p class="intro-sub">PORTAFOLIO</p>
+        <p class = "intro-sub">WELCOME</p>
+    </div>
+    <!-- Forma orgánica -->
+    <svg class="intro-shape" viewBox="0 0 1440 320" preserveAspectRatio="none">
+        <path id="introPath"
+            d="M0,0 L1440,0 L1440,320 
+            Q1200,260 1000,300 
+            Q800,340 600,300 
+            Q400,260 200,300 
+            Q100,320 0,280 Z" />
+    </svg>
+</div>
+
+<div class="custom-cursor"></div>
+
+<header class="nav">
+    <div class="menu" onclick="toggleMenu()">☰</div>
+
+<!-- Logo -->
+<a href="#home" class="logo" aria-label="Ir al inicio">
+    <img src="Images/Ariel Logo.png" alt="Ariel Bourgeat">
+</a>
+
+<div class="socials">
+
+    <a href="https://www.linkedin.com/in/ariel-bourgeat-36999124b/" target="_blank" class="icon">
+        <img src="Images/LinkedinLogo.png" alt="LinkedIn">
+    </a>
+
+    <a href="https://www.pinterest.com/arielbourgeat/?invite_code=b172aceb41cc43dbb9468363a93898e1&sender=597501212971096194" target="_blank" class="icon">
+        <img src="Images/PinterestLogo.jpg" alt="Pinterest">
+    </a>
+
+    <a href="https://www.instagram.com/ariel_bourgeat/" target="_blank" class="icon">
+        <img src="Images/InstagramLogo.jpg" alt="Instagram">
+    </a>
+
+</div>
+</header>
+
+<section class="hero">
+    <div class="hero-left">
+        <h1 class="name">| ARIEL BOURGEAT</h1>
+        <p class="role">Developer & Visual Designer</p>
+    </div> 
+
+    <div class="hero-right">
+        <div class="image-mock">
+            <div class="hero-image" role="img" aria-label="Isometric building and car"></div>
+            <blockquote class="hero-quote">
+                “Everything is designed.<br>
+                Few things are designed well.”
+                <span>— Brian Reed</span>
+            </blockquote>
+        </div>
+    </div>
+</section>
+
+<section class="intro">
+    <div class="intro-text">
+        <h2><span class="code">//</span>Hey, Welcome</h2>
+
+        <p>
+            I build <strong>interactive experiences</strong> through <strong>frontend development</strong> and <strong>visual design</strong>.
+        </p>
+
+        <p>
+            My work blends <strong>clean UI/UX</strong>, creative direction, game dev and scalable code and graphic design to create products that feel intuitive, fluid, and intentional.
+        </p>
+
+        <p>
+            I enjoy shaping ideas from <strong>concept to interface</strong>, focusing on user-centered design, performance, and <strong>aesthetic clarity</strong>. My process is driven by mood, flow, and thoughtful digital aesthetics.
+        </p>
+
+        <p class="more-text">Wanna learn more about me? → Click “More”</p>
+    </div>
+
+    <div class="intro-right">
+        <a href="About.html" class="more-btn">
+            <div class="arrow">↓</div>
+            <div class="pill">
+                M<br>O<br>R<br>E
+            </div>
+        </a>
+    </div>
+</section>
+
+<section class="works">
+    <div class="works-header">
+        <div class="works-title">
+            <div class="works-icon">
+                <img src="Images/Logo overlooking.png" alt="Selected works logo" class="works-icon-img">
+            </div>
+            <h3>SELECTED WORKS:</h3>
+        </div>
+        <div class="works-line"></div>
+    </div>
+
+    <div class="works-list">
+        <div class="work-item">
+            <span>FITME MAGAZINE</span>
+            <div class="work-preview">
+                <img src="Images/FitMeMagazine.png" alt="Magazine" class="preview-block preview-img">
+            </div>
+        </div>
+
+        <div class="work-item active">
+            <span>STYLIZED CAVE & TOWN</span>
+            <div class="work-preview">
+                <img src="Images/ariel-bourgeat-textured.jpg" alt="Stylized cave and town" class="preview-block preview-img">
+            </div>
+        </div>
+
+        <div class="work-item">
+            <span>LOW POLY BUILDING</span>
+            <div class="work-preview">
+                <img src="Images/ariel-bourgeat-alines-building-1.jpg" alt="Building" class="preview-block preview-img">
+            </div>
+        </div>
+
+        <div class="work-item">
+            <span>EL SUSURRO MOVIE POSTER</span>
+            <div class="work-preview">
+                <img src="Images/Poster-Pelicula-de-terror.png" alt="Poster" class="preview-block preview-img">
+            </div>
+        </div>
+    </div>
+
+    <div class="works-cta">
+        <a href="projects.html">
+            <button class="view-work-btn">VIEW MY WORK</button>
+        </a>
+        <a href="#contact" class="scroll-down-btn" aria-label="Ir a Wanna chat">↓</a>
+    </div>
+</section>
+
+<section class="contact" id="contact">
+    <div class="contact-left">
+        <h3>WANNA CHAT ?</h3>
+        <div class="contact-line"></div>
+
+        <ul class="contact-links">
+            <li><a href="mailto:tuemail@gmail.com?subject=Collaboration%20Request&body=Hi%20Ariel,%0D%0A%0D%0AI%20love%20your%20work%20and%20would%20like%20to%20connect.">Pop an email →</a></li>
+            <li><a href="https://www.linkedin.com/in/ariel-bourgeat-36999124b/" target="_blank">LinkedIn →</a></li>
+            <li><a href="#" target="">Github →</a></li>
+            <li><a href="https://arielbourgeat.artstation.com/resume" target="_blank">ArtStation →</a></li>
+        </ul>
+    </div>
+
+    <div class="contact-right">
+        <div class="contact-image-wrap">
+            <div class="contact-character">
+                <img src="Images/Ariel-LogoSinOjos.png" alt="Ariel Bourgeat character" class="contact-illustration-img">
+                <div class="contact-eye contact-eye-left"></div>
+                <div class="contact-eye contact-eye-right"></div>
+            </div>
+            <!--BOTON DE GET IN TOUCH-->
+                <a class="get-in-touch" href="mailto:tuemail@gmail.com?subject=Collaboration%20Request&body=Hi%20Ariel,%0D%0A%0D%0AI%20love%20your%20work%20and%20would%20like%20to%20connect.">GET IN TOUCH</a>
+        </div>
+    </div>
+</section>
+
+<section class="newsletter-section">
+
+    <div class="newsletter-left">
+        <h2 class="newsletter-title">
+            <span>//</span>
+            <span>KEEP</span>
+            <span>UP</span>
+            <span>WITH</span>
+            <span>ME</span>
+        </h2>
+    </div>
+
+    <div class="newsletter-right">
+        <p class="newsletter-sub">// NEWSLETTER;</p>
+
+        <div class="newsletter-input-wrapper">
+            <input type="email" placeholder="Email → examplemail@exmpl.com">
+            <div class="newsletter-line"></div>
+        </div>
+
+        <button class="newsletter-btn">SUBSCRIBE</button>
+    </div>
+
+</section>
+
+<!-- ===== FOOTER HOME ===== -->
+<footer class="footer-home" id="footerHome">
+    <div class="footer-bubbles"></div>
+
+    <div class="footer-rectangles">
+        <div class="rect r1"></div>
+        <div class="rect r2"></div>
+        <div class="rect r3"></div>
+        <div class="rect r4"></div>
+        <div class="rect r5"></div>
+        <div class="rect r6"></div>
+        <div class="rect r7"></div>
+        <div class="rect r8"></div>
+        <div class="rect r9"></div>
+        <div class="rect r10"></div>
+        <div class="rect r11"></div>
+        <div class="rect r12"></div>    
+        <div class="rect r13"></div>     
+    </div>
+    <div class="footer-content">
+        <div class="footer-left">
+            <h2 class="footer-name">ARIEL<br>BOURGEAT</h2>
+            <p class="footer-role">Developer & Visual Designer</p>
+        </div>
+
+        <div class="footer-menu">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="About.html">About Me</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#">LinkedIn</a></li>
+                <li><a href="#">Github</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+<!-- Overlay Menu -->
+<div class="menu-overlay" id="menuOverlay">
+    <div class="menu-header">
+        <button class="menu-close same-spot" onclick="toggleMenu()">✕</button>
+        <h1>ARIEL BOURGEAT</h1>
+    </div>
+
+
+    <div class="menu-content">
+        <ul class="menu-links">
+            <li><a href="#home" onclick="toggleMenu()">HOME.</a></li>
+            <li><a href="About.html" onclick="toggleMenu()">ABOUT.</a></li>
+            <li><a href="projects.html" onclick="toggleMenu()">PROJECTS.</a></li>
+            <li><a href="#contact" onclick="toggleMenu()">CONTACT.</a></li>
+        </ul>
+
+
+        <div class="menu-visuals">
+            <div class="binary-bg" id="binaryBg">
+                <span>0</span><span>1</span><span>1</span><span>0</span><span>1</span><span>0</span>
+                <span>1</span><span>0</span><span>0</span><span>1</span><span>1</span><span>0</span>
+                <span>0</span><span>1</span><span>1</span><span>0</span><span>1</span><span>0</span>
+            </div>
+
+            <div class="menu-character">
+                <img src="Images/logo blanco negro.png" alt="Logoblanconegro" class="">
+            </div>
+        </div>
+    </div>
+
+    <div class="menu-footer">
+        2026 All Rights Reserved. Ariel Bourgeat
+    </div>
+</div>
+
+
+
+
+<script src="script.js"></script>
+
+</body>
+</html>

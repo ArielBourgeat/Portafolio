@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>FitMe Magazine - Project</title>
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="projects.css">
+</head>
+
+<body id="project-detail-page">
+
+<div class="custom-cursor"></div>
+
+<main class="project-detail-shell">
+    <section class="project-detail-layout">
+        <div class="project-detail-text">
+            <h2 class="project-detail-title">FitMe Magazine Cover</h2>
+            <p class="project-detail-meta">Editorial Design</p>
+
+            <p class="project-detail-description">
+                FitMe is an editorial exercise that combines bold type, clean grids and lifestyle imagery to create
+                a contemporary magazine cover for a fitness audience.
+            </p>
+
+            <p class="project-detail-description">
+                The design explores hierarchy between title, supporting headlines and photography, making sure the
+                main figure remains the clear focal point of the layout.
+            </p>
+
+            <p class="project-detail-description">
+                I experimented with different color palettes and typographic weights to keep the cover energetic
+                while still feeling minimal and easy to scan on a shelf.
+            </p>
+            
+            <div class="project-detail-back-wrapper">
+                <a href="projects.html" class="project-detail-back">&larr; PROJECT ARCHIVE</a>
+            </div>
+        </div>
+
+        <div class="project-detail-images">
+            <img src="Images/FitMeMagazine.png" alt="FitMe Magazine final cover" class="project-detail-image">
+
+            <div class="project-detail-grid project-detail-grid--three">
+                <img src="Images/FitMeMagazine.png" alt="Alternate layout 01" class="project-detail-image">
+                <img src="Images/Poster-Pelicula-de-terror.png" alt="Contrast and headline study" class="project-detail-image">
+                <img src="Images/ariel-bourgeat-textured.jpg" alt="Background texture exploration" class="project-detail-image">
+            </div>
+
+            <div class="project-detail-grid project-detail-grid--two">
+                <img src="Images/ariel-bourgeat-alines-building-1.jpg" alt="Color grading reference" class="project-detail-image">
+                <img src="Images/ariel-bourgeat-tbhc.jpg" alt="Alternate photography" class="project-detail-image">
+            </div>
+        </div>
+    </section>
+</main>
+
+<script>
+    (function () {
+        var cursor = document.querySelector(".custom-cursor");
+        if (cursor) {
+            document.addEventListener("mousemove", function (e) {
+                cursor.style.left = e.clientX + "px";
+                cursor.style.top = e.clientY + "px";
+            });
+        }
+
+        var shell = document.querySelector(".project-detail-shell");
+        var images = document.querySelector(".project-detail-images");
+        if (!shell || !images) return;
+
+        var backShown = false;
+
+        images.addEventListener("scroll", function () {
+            if (backShown) return;
+            var bottom = images.scrollTop + images.clientHeight >= images.scrollHeight - 10;
+            if (bottom) {
+                backShown = true;
+                shell.classList.add("show-back");
+            }
+        });
+    })();
+</script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>FitMe Magazine - Ariel Bourgeat</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="projects.css">
+</head>
+<body id="project-detail" class="project-detail-page">
+
+<main class="project-detail-layout">
+    <aside class="project-detail-sidebar">
+        <div class="project-detail-text">
+            <h1 class="project-detail-title">FITME MAGAZINE</h1>
+            <a href="#" class="project-detail-link" target="_blank" rel="noopener">ArtStation →</a>
+            <div class="project-detail-description">
+                <p>The global fitness & lifestyle magazine. Cover design and editorial concept.</p>
+            </div>
+        </div>
+        <a href="projects.html" class="project-back-link" id="projectBackLink" aria-label="Volver a Project Archive">← PROJECT ARCHIVE</a>
+    </aside>
+    <div class="project-detail-images">
+        <div class="project-detail-image">
+            <img src="Images/FitMeMagazine.png" alt="FitMe Magazine">
+        </div>
+    </div>
+</main>
+
+<script src="project-detail.js"></script>
+</body>
+</html>

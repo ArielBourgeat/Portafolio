@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Contacto</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <h1 style="text-align: center; text-decoration: underline;">Wanna chat?</h1>
+        <hr style="width: 70%; left: 15%; margin-left: auto;">
+        <p>Por favor, completa el siguiente formulario para contactarme.</p>
+        <form action="procesar_formulario.php" action="mailto:arielbourgeat@gmail.com" method="post" enctype="">
+            <label for="nombre">Nombre:</label><br>
+            <input type="text" id="nombre" name="nombre" placeholder="Ej. Jaun Jose" required> <br>
+            <label for="apellido">Apellido:</label><br>
+            <input type="text" id="apellido" name="apellido" placeholder="Ej. Perez" required> <br>
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" placeholder="Ej. juanperez@gmail.com" required> <br>
+            <label for="mensaje">Mensaje:</label><br>
+            <textarea id="mensaje" name="mensaje" required maxlength="600" rows="8" cols="100"></textarea>
+            <p>Maximo de 600 caracteres</p>
+            <br> <br>
+            <input type="checkbox" id="checkbox" name="checkbox" required value="Acepto los terminos y condiciones" style="color: white;"> Acepto los terminos y condiciones
+            <br> <br>
+            <hr>
+            <label for="radio">Genero:</label><br>
+            <label for="radio">Masculino</label>
+            <input type="radio" id="mas" name="radio" required value="Masculino"> 
+            <label for="radio">Femenino</label>
+            <input type="radio" id="fem" name="radio" required value="Femenino"> 
+            <label for="radio">Otro</label>
+            <input type="radio" id="otro" name="radio" required value="Otro"> 
+            <br> <br>
+            <hr>
+            <label for="birthday">Fecha de nacimiento:</label>
+            <input type="date" id="date" name="date" required>
+            <br> <br>
+            <input type="time" id="time" name="time" required>
+            <br> <br>
+            <button type="submit" value="Enviar" class="submit-bt">Enviar</button>
+        </form> 
+    </body>
+</html>

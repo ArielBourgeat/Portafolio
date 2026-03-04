@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Stylized Cave &amp; Town - Project</title>
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="projects.css">
+</head>
+
+<body id="project-detail-page">
+
+<div class="custom-cursor"></div>
+
+<main class="project-detail-shell">
+    <section class="project-detail-layout">
+        <div class="project-detail-text">
+            <h2 class="project-detail-title">Stylized Cave &amp; Town</h2>
+            <p class="project-detail-meta">ArtStation →</p>
+
+            <p class="project-detail-description">
+                This project is a stylized 3D environment created in a low–poly aesthetic. The focus was to blend
+                warm lighting, playful color palettes, and simple geometry to build a cozy cave and town scene that
+                feels alive without relying on high–detail assets.
+            </p>
+
+            <p class="project-detail-description">
+                I explored different lighting setups, composition options, and camera angles to highlight depth and
+                storytelling. The scene was modeled and assembled with an emphasis on modular pieces that could be
+                reused across different shots.
+            </p>
+
+            <p class="project-detail-description">
+                This work reflects my interest in environment design and stylized worlds, combining technical
+                workflows with cinematic framing and mood–driven direction.
+            </p>
+
+            <div class="project-detail-back-wrapper">
+                <a href="projects.html" class="project-detail-back">&larr; PROJECT ARCHIVE</a>
+            </div>
+        </div>
+
+        <div class="project-detail-images">
+            <img src="Images/ariel-bourgeat-textured.jpg" alt="Stylized Cave &amp; Town final render" class="project-detail-image">
+
+            <div class="project-detail-grid project-detail-grid--three">
+                <img src="Images/ariel-bourgeat-alines-building-1.jpg" alt="Environment angle 01" class="project-detail-image">
+                <img src="Images/Poster-Pelicula-de-terror.png" alt="Environment angle 02" class="project-detail-image">
+                <img src="Images/FitMeMagazine.png" alt="Environment angle 03" class="project-detail-image">
+            </div>
+
+            <div class="project-detail-grid project-detail-grid--two">
+                <img src="Images/ariel-bourgeat-tbhc.jpg" alt="Lighting and color exploration" class="project-detail-image">
+                <img src="Images/ariel-bourgeat-textured.jpg" alt="Additional composition test" class="project-detail-image">
+            </div>
+        </div>
+    </section>
+</main>
+
+<script>
+    (function () {
+        var cursor = document.querySelector(".custom-cursor");
+        if (cursor) {
+            document.addEventListener("mousemove", function (e) {
+                cursor.style.left = e.clientX + "px";
+                cursor.style.top = e.clientY + "px";
+            });
+        }
+
+        var shell = document.querySelector(".project-detail-shell");
+        var images = document.querySelector(".project-detail-images");
+        if (!shell || !images) return;
+
+        var backShown = false;
+
+        images.addEventListener("scroll", function () {
+            if (backShown) return;
+            var bottom = images.scrollTop + images.clientHeight >= images.scrollHeight - 10;
+            if (bottom) {
+                backShown = true;
+                shell.classList.add("show-back");
+            }
+        });
+    })();
+</script>
+</body>
+</html>

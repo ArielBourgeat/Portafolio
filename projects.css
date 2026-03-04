@@ -1,0 +1,576 @@
+/* ===== BASE ===== */
+
+body#projects-page,
+body#project-detail-page {
+    background: #0d0d0f;
+    color: #fff;
+    margin: 0;
+    font-family: sans-serif;
+    cursor: none;
+    overflow: hidden;
+}
+
+/* Cursor blanco cuando el menú está abierto */
+body.menu-open .custom-cursor {
+    border-color: #fff;
+}
+
+body.menu-open .custom-cursor.filled {
+    background: #fff;
+    border-color: #fff;
+    animation: fillFromCenterWhite 0.3s ease-out;
+}
+
+@keyframes fillFromCenterWhite {
+    0% {
+        width: 20px;
+        height: 20px;
+        background: transparent;
+    }
+    100% {
+        width: 12px;
+        height: 12px;
+        background: #fff;
+    }
+}
+
+@keyframes fillFromCenterWhite {
+    0% {
+        width: 20px;
+        height: 20px;
+        background: transparent;
+    }
+    100% {
+        width: 12px;
+        height: 12px;
+        background: #fff;
+    }
+}
+
+/* ===== CURSOR ===== */
+
+.custom-cursor {
+    position: fixed;
+    width: 18px;
+    height: 18px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: 0.2s ease;
+    z-index: 9999;
+}
+
+.custom-cursor.filled {
+    background: #fff;
+}
+
+/* ===== NAV ===== */
+
+.nav-projects {
+    background: #0d0d0f;
+    padding: 24px 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: none;
+    position: relative;
+    z-index: 1001;
+}
+
+.nav-projects .menu {
+    font-size: 28px;
+    cursor: pointer;
+    position: relative;
+    z-index: 1002;
+    pointer-events: auto;
+    padding: 8px;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.logo img {
+    height: 40px;
+}
+
+.nav-projects-title {
+    font-size: 14px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #f5f5f5;
+}
+
+.nav-projects-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-right: 40px; /* mueve reloj y logo un poco a la izquierda */
+}
+
+.nav-projects-clock {
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #c7c7c7;
+}
+
+/* ===== MAIN ===== */
+
+.projects-main {
+    padding: 40px 48px 120px;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+/* ===== THEME TOGGLE LEFT ===== */
+
+.theme-toggle-vertical {
+    position: fixed;
+    left: 32px;
+    top: 50%;
+    transform: translateY(-50%) rotate(-90deg);
+    display: flex;
+    gap: 12px;
+    z-index: 900;
+}
+
+.theme-toggle-btn {
+    background: transparent;
+    border: none;
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: #666;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.theme-toggle-btn.active {
+    color: #ffffff;
+}
+
+/* ===== VERTICAL LOOP CAROUSEL ===== */
+
+.projects-carousel-wrapper {
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 80px;
+}
+
+.projects-carousel-window {
+    width: 720px;
+    height: 420px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: visible;
+}
+
+.projects-carousel-track {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.project-card {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 700px;
+    height: 380px;
+    overflow: hidden;
+    border-radius: 24px;
+    opacity: 0.4;
+    transform: translate(-50%, -50%) scale(0.8);
+    transition: transform 0.6s cubic-bezier(.77,0,.18,1), opacity 0.6s cubic-bezier(.77,0,.18,1);
+    pointer-events: none;
+}
+
+.project-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.project-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8));
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.project-review-btn {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+    padding: 10px 42px;
+    border-radius: 999px;
+    border: 1px solid #ffffff;
+    background: transparent;
+    color: #ffffff;
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.4s ease, transform 0.4s ease, background 0.3s ease, color 0.3s ease;
+}
+
+.project-review-btn:hover {
+    background: #ffffff;
+    color: #000000;
+}
+
+.project-card:hover::after {
+    opacity: 1;
+}
+
+.project-card:hover .project-review-btn {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.project-card.is-active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.project-title-container {
+    max-width: 260px;
+}
+
+.project-title-text {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #e5e5e5;
+    opacity: 0.9;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.project-title-text.animating {
+    opacity: 0;
+    transform: translateY(6px);
+}
+
+/* ===== LIGHT THEME ===== */
+
+body#projects-page.light-theme {
+    background: #f5f5f5;
+    color: #111;
+}
+
+body#projects-page.light-theme .nav-projects {
+    background: #f5f5f5;
+}
+
+body#projects-page.light-theme .nav-projects-title,
+body#projects-page.light-theme .nav-projects-clock {
+    color: #111;
+}
+
+body#projects-page.light-theme .theme-toggle-btn.active {
+    color: #111;
+}
+
+body#projects-page.light-theme .project-title-text {
+    color: #333;
+}
+
+/* ===== PROJECT DETAIL LAYOUT ===== */
+
+.project-detail-main {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 80px 80px 120px;
+}
+
+.project-detail-shell {
+    max-width: 1440px;
+    margin: 0 auto;
+    height: 100vh;
+    padding: 80px 80px 40px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.project-detail-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.8fr);
+    gap: 80px;
+    align-items: flex-start;
+    height: 100%;
+}
+
+.project-detail-text {
+    position: sticky;
+    top: 80px;
+}
+
+.project-detail-title {
+    font-size: clamp(40px, 4.5vw, 56px);
+    margin: 0 0 8px 0;
+}
+
+.project-detail-meta {
+    font-size: 14px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    opacity: 0.7;
+    margin-bottom: 32px;
+}
+
+.project-detail-description {
+    font-size: 15px;
+    line-height: 1.8;
+    max-width: 520px;
+    margin-bottom: 20px;
+    opacity: 0.9;
+}
+
+.project-detail-images {
+    height: 100%;
+    padding-right: 8px;
+    box-sizing: border-box;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* Oculta la barra de scroll en la columna de imágenes,
+   pero mantiene el scroll funcional */
+.project-detail-images {
+    scrollbar-width: none;      /* Firefox */
+    -ms-overflow-style: none;   /* IE/Edge antiguo */
+}
+
+.project-detail-images::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+.project-detail-image {
+    width: 100%;
+    display: block;
+    border-radius: 4px;
+    object-fit: cover;
+}
+
+.project-detail-grid {
+    display: grid;
+    gap: 16px;
+}
+
+.project-detail-grid--three {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.project-detail-grid--two {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.project-detail-footer {
+    margin-top: 80px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: 32px;
+}
+
+.project-detail-back {
+    font-size: 12px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #f5f5f5;
+    opacity: 0.7;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.project-detail-back:hover {
+    opacity: 1;
+    transform: translateX(-4px);
+}
+
+.project-detail-back-wrapper {
+    margin-top: 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    padding-top: 24px;
+    opacity: 0;
+    transform: translateY(8px);
+    pointer-events: none;
+    transition: opacity 0.45s cubic-bezier(.77,0,.18,1), transform 0.45s cubic-bezier(.77,0,.18,1);
+}
+
+.project-detail-shell.show-back .project-detail-back-wrapper {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+/* ===== MENU OVERLAY ===== */
+.menu-overlay {
+    position: fixed;
+    inset: 0;
+    background: black;
+    color: white;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.45s ease;
+    z-index: 2000;
+    overflow: hidden;
+    transform: translateY(-100%);
+}
+
+.menu-overlay.open {
+    opacity: 1;
+    pointer-events: all;
+    transform: translateY(0);
+}
+
+
+.menu-header {
+    position: absolute;
+    top: 12px;
+    left: 24px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.menu-close.same-spot {
+    font-size: 28px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: none;
+}
+
+.menu-header h1 {
+    font-size: 48px;
+    font-weight: 800;
+}
+
+.menu-content {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 120px;
+}
+
+.menu-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.menu-links a {
+    color: white;
+    font-size: 40px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: 0.2s ease;
+    cursor: none;
+}
+
+.menu-links a:hover {
+    font-family: "JetBrains Mono", monospace;
+    letter-spacing: 2px;
+}
+
+.menu-visuals {
+    position: relative;
+}
+
+.menu-character {
+    width: 240px;
+    height: 240px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: transparent;
+}
+
+.menu-character img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+/* Binary Rain */
+.binary-bg span {
+    position: absolute;
+    color: white;
+    opacity: 0.25;
+    font-family: monospace;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(110vh);
+    }
+}
+
+.menu-footer {
+    position: absolute;
+    bottom: 20px;
+    left: 24px;
+    font-size: 12px;
+    opacity: 0.6;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .menu-content {
+        grid-template-columns: 1fr;
+        gap: 60px;
+        padding: 80px 32px;
+    }
+
+    .menu-links a {
+        font-size: 28px;
+    }
+
+    .contact {
+        grid-template-columns: 1fr;
+        gap: 60px;
+        text-align: center;
+    }
+
+    .contact-line {
+    margin: 0 auto 48px;
+    }
+}
+
+.binary-bg {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none; /* 👈 ESTO ARREGLA LA X */
+}
+
+.binary-bg span {
+    position: absolute;
+    top: -20px;
+    color: white;
+    font-family: monospace;
+    font-size: 14px;
+    animation: fall linear infinite;
+}
+
+.menu-header {
+    z-index: 10;
+}
+
+.menu-close {
+    cursor: none;
+    pointer-events: all;
+}

@@ -1,0 +1,43 @@
+body {
+    background-color: lightslategray;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+}
+
+p {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+}
+
+label {
+    color: white;
+    font-size: larger;
+}
+
+textarea {
+    width: 500px;
+    height: 200px;
+    font-size: 14px;
+    resize: none;
+    border: 7px gray;
+    padding: 10px;
+    background-color: rgb(98, 112, 126);
+}
+
+.submit-bt{
+    background-color: lightslategray;
+    color: white;
+    border-radius: 30%;
+    border-color: white;
+    text-align: center;
+    padding: 14px;
+    width: 80px;
+}
+
+.submit-bt:hover{
+    background-color: white;
+    color: rgba(119, 136, 153, 0);
+}

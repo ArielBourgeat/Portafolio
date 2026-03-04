@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Horror Movie Poster - Project</title>
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="projects.css">
+</head>
+
+<body id="project-detail-page">
+
+<div class="custom-cursor"></div>
+
+<main class="project-detail-shell">
+    <section class="project-detail-layout">
+        <div class="project-detail-text">
+            <h2 class="project-detail-title">Horror Movie Poster</h2>
+            <p class="project-detail-meta">Art Direction &amp; Key Art</p>
+
+            <p class="project-detail-description">
+                This key art explores a grounded horror mood using strong contrast, tight framing and minimal color.
+                The goal was to create a poster that feels cinematic without overloading the composition.
+            </p>
+
+            <p class="project-detail-description">
+                Typography and composition were balanced to lead the eye from the title to the focal character, while
+                textures and grain add a tactile layer that references classic horror posters.
+            </p>
+
+            <p class="project-detail-description">
+                The project iterates on several crops, lighting variations and text placement options to arrive at a
+                final image that stands out both digitally and in print.
+            </p>
+            
+            <div class="project-detail-back-wrapper">
+                <a href="projects.html" class="project-detail-back">&larr; PROJECT ARCHIVE</a>
+            </div>
+        </div>
+
+        <div class="project-detail-images">
+            <img src="Images/Poster-Pelicula-de-terror.png" alt="Final horror movie poster" class="project-detail-image">
+
+            <div class="project-detail-grid project-detail-grid--three">
+                <img src="Images/Poster-Pelicula-de-terror.png" alt="Alternate crop 01" class="project-detail-image">
+                <img src="Images/ariel-bourgeat-textured.jpg" alt="Mood exploration" class="project-detail-image">
+                <img src="Images/ariel-bourgeat-alines-building-1.jpg" alt="Lighting reference" class="project-detail-image">
+            </div>
+
+            <div class="project-detail-grid project-detail-grid--two">
+                <img src="Images/FitMeMagazine.png" alt="Typography tests" class="project-detail-image">
+                <img src="Images/ariel-bourgeat-tbhc.jpg" alt="Texture and noise experiments" class="project-detail-image">
+            </div>
+        </div>
+    </section>
+</main>
+
+<script>
+    (function () {
+        var cursor = document.querySelector(".custom-cursor");
+        if (cursor) {
+            document.addEventListener("mousemove", function (e) {
+                cursor.style.left = e.clientX + "px";
+                cursor.style.top = e.clientY + "px";
+            });
+        }
+
+        var shell = document.querySelector(".project-detail-shell");
+        var images = document.querySelector(".project-detail-images");
+        if (!shell || !images) return;
+
+        var backShown = false;
+
+        images.addEventListener("scroll", function () {
+            if (backShown) return;
+            var bottom = images.scrollTop + images.clientHeight >= images.scrollHeight - 10;
+            if (bottom) {
+                backShown = true;
+                shell.classList.add("show-back");
+            }
+        });
+    })();
+</script>
+</body>
+</html>
+

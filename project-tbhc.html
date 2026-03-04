@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>TBHC Illustration - Project</title>
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="projects.css">
+</head>
+
+<body id="project-detail-page">
+
+<div class="custom-cursor"></div>
+
+<main class="project-detail-shell">
+    <section class="project-detail-layout">
+        <div class="project-detail-text">
+            <h2 class="project-detail-title">TBHC Illustration</h2>
+            <p class="project-detail-meta">Character &amp; Cover Art</p>
+
+            <p class="project-detail-description">
+                This illustration mixes graphic shapes, bold lighting and a limited palette to capture the energy
+                of a music‑inspired piece.
+            </p>
+
+            <p class="project-detail-description">
+                The focus was on expressive posing and rhythm inside the composition, using repeating lines and
+                shapes to guide the viewer across the artwork.
+            </p>
+
+            <p class="project-detail-description">
+                Several crops and color passes were explored to balance legibility with a strong, punchy silhouette.
+            </p>
+            
+            <div class="project-detail-back-wrapper">
+                <a href="projects.html" class="project-detail-back">&larr; PROJECT ARCHIVE</a>
+            </div>
+        </div>
+
+        <div class="project-detail-images">
+            <img src="Images/ariel-bourgeat-tbhc.jpg" alt="TBHC final illustration" class="project-detail-image">
+
+            <div class="project-detail-grid project-detail-grid--three">
+                <img src="Images/ariel-bourgeat-tbhc.jpg" alt="Detail crop 01" class="project-detail-image">
+                <img src="Images/FitMeMagazine.png" alt="Typography overlay study" class="project-detail-image">
+                <img src="Images/Poster-Pelicula-de-terror.png" alt="Contrast and texture reference" class="project-detail-image">
+            </div>
+
+            <div class="project-detail-grid project-detail-grid--two">
+                <img src="Images/ariel-bourgeat-textured.jpg" alt="Lighting reference" class="project-detail-image">
+                <img src="Images/ariel-bourgeat-alines-building-1.jpg" alt="Composition variation" class="project-detail-image">
+            </div>
+        </div>
+    </section>
+</main>
+
+<script>
+    (function () {
+        var cursor = document.querySelector(".custom-cursor");
+        if (cursor) {
+            document.addEventListener("mousemove", function (e) {
+                cursor.style.left = e.clientX + "px";
+                cursor.style.top = e.clientY + "px";
+            });
+        }
+
+        var shell = document.querySelector(".project-detail-shell");
+        var images = document.querySelector(".project-detail-images");
+        if (!shell || !images) return;
+
+        var backShown = false;
+
+        images.addEventListener("scroll", function () {
+            if (backShown) return;
+            var bottom = images.scrollTop + images.clientHeight >= images.scrollHeight - 10;
+            if (bottom) {
+                backShown = true;
+                shell.classList.add("show-back");
+            }
+        });
+    })();
+</script>
+</body>
+</html>
+

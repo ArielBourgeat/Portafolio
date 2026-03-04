@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Fitness &amp; Organization App - Project</title>
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="projects.css">
+</head>
+
+<body id="project-detail-page">
+
+<div class="custom-cursor"></div>
+
+<main class="project-detail-shell">
+    <section class="project-detail-layout">
+        <div class="project-detail-text">
+            <h2 class="project-detail-title">Fitness &amp; Organization App</h2>
+            <p class="project-detail-meta">Product Concept</p>
+
+            <p class="project-detail-description">
+                This concept explores a mobile experience that combines workout tracking with habit and task
+                management, keeping everything in a single, minimal interface.
+            </p>
+
+            <p class="project-detail-description">
+                The focus was on clear hierarchy, legible typography and a calm palette that supports daily use
+                without feeling noisy or overwhelming.
+            </p>
+
+            <p class="project-detail-description">
+                Several screen states and flows were designed to visualize onboarding, daily check‑ins, and long‑term
+                progress tracking.
+            </p>
+
+            <div class="project-detail-back-wrapper">
+                <a href="projects.html" class="project-detail-back">&larr; PROJECT ARCHIVE</a>
+            </div>
+        </div>
+
+        <div class="project-detail-images">
+            <img src="Images/ariel-bourgeat-tbhc.jpg" alt="App concept hero image" class="project-detail-image">
+
+            <div class="project-detail-grid project-detail-grid--three">
+                <img src="Images/FitMeMagazine.png" alt="UI layout exploration" class="project-detail-image">
+                <img src="Images/ariel-bourgeat-textured.jpg" alt="Dashboard mood" class="project-detail-image">
+                <img src="Images/ariel-bourgeat-alines-building-1.jpg" alt="Cards and modules" class="project-detail-image">
+            </div>
+
+            <div class="project-detail-grid project-detail-grid--two">
+                <img src="Images/Poster-Pelicula-de-terror.png" alt="Dark mode exploration" class="project-detail-image">
+                <img src="Images/FitMeMagazine.png" alt="Typography and spacing tests" class="project-detail-image">
+            </div>
+        </div>
+    </section>
+</main>
+
+<script>
+    (function () {
+        var cursor = document.querySelector(".custom-cursor");
+        if (cursor) {
+            document.addEventListener("mousemove", function (e) {
+                cursor.style.left = e.clientX + "px";
+                cursor.style.top = e.clientY + "px";
+            });
+        }
+
+        var shell = document.querySelector(".project-detail-shell");
+        var images = document.querySelector(".project-detail-images");
+        if (!shell || !images) return;
+
+        var backShown = false;
+
+        images.addEventListener("scroll", function () {
+            if (backShown) return;
+            var bottom = images.scrollTop + images.clientHeight >= images.scrollHeight - 10;
+            if (bottom) {
+                backShown = true;
+                shell.classList.add("show-back");
+            }
+        });
+    })();
+</script>
+</body>
+</html>
+

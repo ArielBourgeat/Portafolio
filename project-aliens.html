@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Aliens Building Visual - Project</title>
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="projects.css">
+</head>
+
+<body id="project-detail-page">
+
+<div class="custom-cursor"></div>
+
+<main class="project-detail-shell">
+    <section class="project-detail-layout">
+        <div class="project-detail-text">
+            <h2 class="project-detail-title">Aliens Building Visual</h2>
+            <p class="project-detail-meta">Isometric Illustration</p>
+
+            <p class="project-detail-description">
+                This piece focuses on an isometric building lit at night, combining playful sci‑fi details with a
+                clean, graphic presentation.
+            </p>
+
+            <p class="project-detail-description">
+                The illustration explores color blocking, emissive lighting and small story cues hidden in props
+                around the scene.
+            </p>
+
+            <p class="project-detail-description">
+                Multiple angles and crops were tested to find the most readable silhouette and balance between
+                foreground, midground and background elements.
+            </p>
+            
+            <div class="project-detail-back-wrapper">
+                <a href="projects.html" class="project-detail-back">&larr; PROJECT ARCHIVE</a>
+            </div>
+        </div>
+
+        <div class="project-detail-images">
+            <img src="Images/ariel-bourgeat-alines-building-1.jpg" alt="Aliens building main render" class="project-detail-image">
+
+            <div class="project-detail-grid project-detail-grid--three">
+                <img src="Images/ariel-bourgeat-alines-building-1.jpg" alt="Alternate crop 01" class="project-detail-image">
+                <img src="Images/ariel-bourgeat-textured.jpg" alt="Environment reference" class="project-detail-image">
+                <img src="Images/FitMeMagazine.png" alt="Color palette study" class="project-detail-image">
+            </div>
+
+            <div class="project-detail-grid project-detail-grid--two">
+                <img src="Images/Poster-Pelicula-de-terror.png" alt="Lighting variation" class="project-detail-image">
+                <img src="Images/ariel-bourgeat-tbhc.jpg" alt="Additional frame" class="project-detail-image">
+            </div>
+        </div>
+    </section>
+</main>
+
+<script>
+    (function () {
+        var cursor = document.querySelector(".custom-cursor");
+        if (cursor) {
+            document.addEventListener("mousemove", function (e) {
+                cursor.style.left = e.clientX + "px";
+                cursor.style.top = e.clientY + "px";
+            });
+        }
+
+        var shell = document.querySelector(".project-detail-shell");
+        var images = document.querySelector(".project-detail-images");
+        if (!shell || !images) return;
+
+        var backShown = false;
+
+        images.addEventListener("scroll", function () {
+            if (backShown) return;
+            var bottom = images.scrollTop + images.clientHeight >= images.scrollHeight - 10;
+            if (bottom) {
+                backShown = true;
+                shell.classList.add("show-back");
+            }
+        });
+    })();
+</script>
+</body>
+</html>
+
