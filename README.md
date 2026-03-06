@@ -54,23 +54,23 @@ Interactive Project Carousel
 
   The Project Archive page features a vertical looping carousel where:
 
-  Projects scroll one at a time
+    Projects scroll one at a time
 
-  The list loops infinitely
+    The list loops infinitely
 
-  Hovering over a project reveals a Review button
+    Hovering over a project reveals a Review button
 
-  The project title dynamically updates with animation
+    The project title dynamically updates with animation
 
-  This approach replaces a traditional grid layout with a more cinematic navigation experience.
+    This approach replaces a traditional grid layout with a more cinematic navigation experience.
 
-  Dark / Light Mode Toggle
+    Dark / Light Mode Toggle
 
-  Users can switch between dark and light themes directly from the interface.
+    Users can switch between dark and light themes directly from the interface.
 
-  The site was designed primarily for dark mode, but the toggle allows better accessibility and preference control.
+    The site was designed primarily for dark mode, but the toggle allows better accessibility and preference control.
 
-  Live Clock
+    Live Clock
 
 The navigation bar displays a real-time clock showing:
 
@@ -82,13 +82,13 @@ Smooth Animations
 
 Animations are implemented using CSS transitions and JavaScript to create fluid interactions including:
 
-Hover reveals
+    Hover reveals
 
-Carousel motion
+    Carousel motion
 
-Title transitions
+    Title transitions
 
-Page section animations
+    Page section animations
 
 Technologies Used
 
@@ -96,19 +96,21 @@ The project is intentionally built with fundamental web technologies rather than
 
 Frontend
 
-HTML5
+    HTML5
 
-CSS3
+    CSS3
 
-Vanilla JavaScript
+    Vanilla JavaScript
 
 Design Tools
 
-Blender (3D modeling and renders)
+    Blender (3D modeling and renders)
 
-Figma (UI design and layout planning)
+    Figma (UI design and layout planning)
 
-Adobe tools for graphic design assets
+    Adobe tools for graphic design assets
+
+Project flow/Structure:
 
     Project Structure
     portfolio
@@ -152,13 +154,13 @@ Purpose of the Project
 
 This portfolio was created to serve multiple purposes:
 
-Present creative work in a professional format
+    Present creative work in a professional format
 
-Experiment with front-end interaction design
+    Experiment with front-end interaction design
 
-Explore UI concepts that blend design and development
+    Explore UI concepts that blend design and development
 
-Practice building complete interfaces without frameworks
+    Practice building complete interfaces without frameworks
 
 The site is also part of an ongoing process of learning and experimentation in areas such as:
 
@@ -190,14 +192,14 @@ Author
 
 Ariel Bourgeat
 
-Computer Engineering student exploring the intersection of:
+Interactive Media Design and Computer Engineering student exploring the intersection of:
 
-design
+    design
 
-technology
+    technology
 
-interactive media
+    interactive media
 
-3D art
+    3D art
 
 This portfolio represents both a creative archive and an evolving digital experiment.
