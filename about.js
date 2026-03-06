@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
         observer.observe(experienceSection);
     }
 
-    /* ================= FUN FACT INTERACTION ================= */
+    /* ================= FUN FACT  ================= */
 
     const quotes = document.querySelectorAll(".quote-card");
     const postit = document.getElementById("postit");
@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-// TEXTO TYPEWRITTER
+/* ================= TYPEWRITTER ================= */
 const funSection = document.getElementById("funSection");
 let animationStarted = false;
 
@@ -143,7 +143,7 @@ function startFunSection() {
         }
     }
 
-//PLAY BUTTON
+/* ================= MUSIC PLAYER ================= */
 const audio = document.getElementById("audio");
 const playBtn = document.getElementById("playBtn");
 

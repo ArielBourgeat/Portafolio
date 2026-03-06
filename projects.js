@@ -56,7 +56,6 @@ if (binaryContainer) {
     setInterval(createBinaryRain, 150);
 }
 
-// Exponer en window para que onclick="toggleMenu()" en el HTML funcione
 window.toggleMenu = toggleMenu;
 
 function initMenu() {
@@ -86,7 +85,6 @@ if (document.readyState === "loading") {
     initMenu();
 }
 
-/* ===== VERTICAL FERRIS-WHEEL CAROUSEL ===== */
 
 const cards = Array.from(document.querySelectorAll(".project-card"));
 const projectTitleEl = document.getElementById("projectTitle");
@@ -163,7 +161,6 @@ window.addEventListener(
     { passive: false }
 );
 
-/* ===== NAV CLOCK ===== */
 
 const clockEl = document.getElementById("projectsClock");
 
@@ -187,7 +184,6 @@ function updateClock() {
 updateClock();
 setInterval(updateClock, 1000);
 
-/* ===== LIGHT / DARK MODE ===== */
 
 const themeButtons = document.querySelectorAll(".theme-toggle-btn");
 

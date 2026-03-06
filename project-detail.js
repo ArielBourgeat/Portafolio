@@ -1,4 +1,4 @@
-// Mostrar el botón "← PROJECT ARCHIVE" solo cuando el usuario llega al final del scroll (imágenes)
+// Mostrar el botón "← PROJECT ARCHIVE" solo cuando el usuario llega al final del scroll
 document.addEventListener("DOMContentLoaded", function () {
     var backLink = document.getElementById("projectBackLink");
     var imagesColumn = document.querySelector(".project-detail-images");

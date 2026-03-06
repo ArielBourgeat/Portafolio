@@ -233,14 +233,13 @@ html::-webkit-scrollbar {
     border-radius: 8px;
 }
 
-/* Right column images */
 
 .image-stack {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     gap: 16px;
-    width: 75%; /* hace todo más pequeño */
+    width: 75%;
 }
 
 .image-stack img {
@@ -253,10 +252,9 @@ html::-webkit-scrollbar {
 }
 
 
-/* Imagen izquierda ocupa ambas filas */
 .image-stack img:nth-child(1) {
     grid-column: 1 / 2;
-    grid-row: 1 / 3;   /* clave para igualar altura */
+    grid-row: 1 / 3;  
 }
 
 /* Las dos derechas */
@@ -386,22 +384,21 @@ html::-webkit-scrollbar {
 .experience-character {
     position: absolute;
     top: 50%;
-    right: -150px; /* empieza fuera */
+    right: -150px; 
     transform: translateY(-50%) rotate(-90deg);
-    height: 320px; /* MÁS PEQUEÑO */
+    height: 320px; 
     pointer-events: none;
 
     opacity: 0;
     transition: right 1s cubic-bezier(.77,0,.18,1), opacity 1s ease;
 }
 
-/* cuando entra */
 .experience-character.visible {
-    right: -10px; /* pegado literal al borde */
+    right: -10px; 
     opacity: 1;
 }
 
-/* ================= FUN FACT SECTION ================= */
+/* ================= FUN FACT  ================= */
 
 .funfact-section {
     padding: 160px 8vw;
@@ -524,7 +521,6 @@ html::-webkit-scrollbar {
     align-items: center;
 }
 
-  /* Typing */
 .typing {
     font-size: 1.1rem;
     max-width: 400px;
@@ -546,7 +542,6 @@ html::-webkit-scrollbar {
     font-weight: 500;
 }
 
-  /* Hidden default */
 .hidden {
     opacity: 0;
     transform: translateY(20px);

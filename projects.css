@@ -108,7 +108,7 @@ body.menu-open .custom-cursor.filled {
     display: flex;
     align-items: center;
     gap: 16px;
-    margin-right: 40px; /* mueve reloj y logo un poco a la izquierda */
+    margin-right: 40px; 
 }
 
 .nav-projects-clock {
@@ -126,7 +126,6 @@ body.menu-open .custom-cursor.filled {
     margin: 0 auto;
 }
 
-/* ===== THEME TOGGLE LEFT ===== */
 
 .theme-toggle-vertical {
     position: fixed;
@@ -153,7 +152,7 @@ body.menu-open .custom-cursor.filled {
     color: #ffffff;
 }
 
-/* ===== VERTICAL LOOP CAROUSEL ===== */
+/* ===== VERTICAL CAROUSEL ===== */
 
 .projects-carousel-wrapper {
     height: 70vh;
@@ -286,7 +285,7 @@ body#projects-page.light-theme .project-title-text {
     color: #333;
 }
 
-/* ===== PROJECT DETAIL LAYOUT ===== */
+/* ===== PROYECTOS INTERNOS ===== */
 
 .project-detail-main {
     max-width: 1440px;
@@ -347,8 +346,6 @@ body#projects-page.light-theme .project-title-text {
     gap: 24px;
 }
 
-/* Oculta la barra de scroll en la columna de imágenes,
-   pero mantiene el scroll funcional */
 .project-detail-images {
     scrollbar-width: none;      /* Firefox */
     -ms-overflow-style: none;   /* IE/Edge antiguo */
@@ -417,7 +414,6 @@ body#projects-page.light-theme .project-title-text {
 }
 
 /* ===== MENU OVERLAY ===== */
-/* Cerrado: z-index bajo para no tapar el header y permitir clic en ☰ */
 .menu-overlay {
     position: fixed;
     inset: 0;
@@ -562,7 +558,7 @@ body#projects-page.light-theme .project-title-text {
     position: absolute;
     inset: 0;
     overflow: hidden;
-    pointer-events: none; /* 👈 ESTO ARREGLA LA X */
+    pointer-events: none; 
 }
 
 .binary-bg span {
