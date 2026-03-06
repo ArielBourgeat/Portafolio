@@ -60,7 +60,7 @@ if (binaryContainer) {
 window.toggleMenu = toggleMenu;
 
 function initMenu() {
-    const menuButton = document.querySelector(".menu");
+    const menuButton = document.getElementById("menuBtn") || document.querySelector(".menu");
     const menuClose = document.querySelector(".menu-close");
     const menuOverlay = document.getElementById("menuOverlay");
 
@@ -69,7 +69,7 @@ function initMenu() {
             e.preventDefault();
             e.stopPropagation();
             toggleMenu();
-        });
+        }, true);
     }
 
     if (menuClose && menuOverlay) {
