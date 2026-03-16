@@ -351,6 +351,18 @@ body#projects-page.light-theme .project-title-text {
     -ms-overflow-style: none;   /* IE/Edge antiguo */
 }
 
+project-detail-video {
+    height: 100%;
+    padding-right: 8px;
+    box-sizing: border-box;
+    overflow-y: auto;
+    object-fit: cover;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+
 .project-detail-images::-webkit-scrollbar {
     width: 0;
     height: 0;
