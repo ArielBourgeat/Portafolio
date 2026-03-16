@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Photography Portfolio</title>
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="projects.css">
+</head>
+
+<body id="project-detail-page">
+
+<div class="custom-cursor"></div>
+
+<main class="project-detail-shell">
+    <section class="project-detail-layout">
+        <div class="project-detail-text">
+            <h2 class="project-detail-title">Photography Portfolio</h2>
+            <p class="project-detail-meta"> Documentary photography, portraiture, and practical work →</p>
+
+            <p class="project-detail-description">
+                Photography has become my way of pausing the fleeting moments of life, observing what often goes unnoticed, 
+                and translating experiences into visual stories. Each image in this portfolio reflects my exploration of light,
+                composition, and emotion capturing the subtleties of human experience and the world around us.
+
+            </p>
+
+            <p class="project-detail-description">
+                For me, photography is not only about aesthetics but also about awareness. It invites a slower way of looking at the world,
+                encouraging patience and curiosity in every frame. The process of searching for a moment, waiting for the right light, or 
+                discovering a compelling composition becomes an act of mindfulness. In this way, the camera becomes both a creative tool 
+                and a means of understanding the environments, people, and emotions that shape our everyday lives.
+            </p>
+
+            <p class="project-detail-description">
+                This portfolio represents an ongoing journey of observation and experimentation. Each photograph is a step in refining my
+                visual language, exploring new perspectives, and deepening my relationship with the art of seeing. As you move through these 
+                images, my hope is that they invite you to pause as well—to notice the quiet details, the fleeting gestures, and the beauty
+                hidden within the ordinary.
+            </p>
+
+            <div class="project-detail-back-wrapper">
+                <a href="projects.html" class="project-detail-back">&larr; PROJECT ARCHIVE</a>
+            </div>
+        </div>
+
+        <div class="project-detail-images">
+            <img src="Images/foto2.png" alt="Stylized Cave &amp; Town final render" class="project-detail-image">
+
+
+            <div class="project-detail-grid project-detail-grid--three">
+                <img src="Images/Foto1.png" alt="Environment angle 02" class="project-detail-image">
+                <img src="Images/foto2.png" alt="Environment angle 03" class="project-detail-image">
+                <img src="Images/foto3.png" alt="Lighting and color exploration" class="project-detail-image">
+            </div>
+
+            <div class="project-detail-grid project-detail-grid--two">
+                <img src="Images/foto4.png" alt="Additional composition test" class="project-detail-image">
+                <img src="Images/foto5.png" alt="Additional composition test" class="project-detail-image">
+                <img src="Images/foto6.png" alt="Additional composition test" class="project-detail-image">
+            </div>
+        </div>
+    </section>
+</main>
+
+<script>
+    (function () {
+        var cursor = document.querySelector(".custom-cursor");
+        if (cursor) {
+            document.addEventListener("mousemove", function (e) {
+                cursor.style.left = e.clientX + "px";
+                cursor.style.top = e.clientY + "px";
+            });
+        }
+
+        var shell = document.querySelector(".project-detail-shell");
+        var images = document.querySelector(".project-detail-images");
+        if (!shell || !images) return;
+
+        var backShown = false;
+
+        images.addEventListener("scroll", function () {
+            if (backShown) return;
+            var bottom = images.scrollTop + images.clientHeight >= images.scrollHeight - 10;
+            if (bottom) {
+                backShown = true;
+                shell.classList.add("show-back");
+            }
+        });
+    })();
+</script>
+</body>
+</html>
