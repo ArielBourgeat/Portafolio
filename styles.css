@@ -206,7 +206,7 @@ body.menu-open .custom-cursor.filled {
 
 .hero-left {
     padding: 48px;
-    background:rgb(242, 69, 69);
+    background:#1B2AD1;
     display: flex;
     flex-direction: column;
     justify-content: center;
