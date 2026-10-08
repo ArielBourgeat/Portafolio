@@ -41,29 +41,55 @@ document.addEventListener("DOMContentLoaded", () => {
 
     /* ================= EXPERIENCE ================= */
 
-    const cards = document.querySelectorAll(".exp-card");
     const character = document.querySelector(".experience-character");
     const experienceSection = document.querySelector(".experience-section");
 
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
-            if (entry.isIntersecting) {
-
-                cards.forEach((card, index) => {
-                    setTimeout(() => {
-                        card.classList.add("visible");
-                    }, index * 200);
-                });
-
-                if (character) {
-                    character.classList.add("visible");
-                }
+            if (entry.isIntersecting && character) {
+                character.classList.add("visible");
             }
         });
-    }, { threshold: 0.4 });
+    }, { threshold: 0.3 });
 
     if (experienceSection) {
         observer.observe(experienceSection);
+    }
+
+    const workflow = document.getElementById("workflow");
+    const brush = document.getElementById("workflowBrush");
+    const workflowSteps = [...document.querySelectorAll(".workflow-step")];
+
+    if (workflow && brush && workflowSteps.length) {
+        const reduceWorkflow = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        function paintWorkflow() {
+            const length = brush.getTotalLength();
+            const rect = workflow.getBoundingClientRect();
+            const scrollable = workflow.offsetHeight - window.innerHeight;
+            const scrolled = Math.min(Math.max(-rect.top, 0), Math.max(scrollable, 1));
+            const progress = reduceWorkflow || scrollable <= 0 ? 1 : scrolled / scrollable;
+
+            brush.style.strokeDasharray = String(length);
+            brush.style.strokeDashoffset = String(length * (1 - progress));
+
+            workflowSteps.forEach((step, index) => {
+                const lines = step.querySelectorAll(".wf-kicker, .wf-line");
+                const start = 0.06 + (index / workflowSteps.length) * 0.78;
+
+                lines.forEach((line, lineIndex) => {
+                    const span = line.querySelector("span");
+                    if (!span) return;
+                    const local = Math.min(Math.max((progress - start - lineIndex * 0.012) / 0.07, 0), 1);
+                    const eased = 1 - Math.pow(1 - local, 3);
+                    span.style.transform = `translateY(${(1 - eased) * 120}%)`;
+                });
+            });
+        }
+
+        paintWorkflow();
+        window.addEventListener("scroll", paintWorkflow, { passive: true });
+        window.addEventListener("resize", paintWorkflow);
     }
 
     /* ================= FUN FACT  ================= */

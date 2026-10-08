@@ -350,35 +350,128 @@ html::-webkit-scrollbar {
 }
 
 .experience-cards {
-    width: 60%;
+    width: min(760px, 72%);
     display: flex;
     flex-direction: column;
-    gap: 40px;
 }
 
 .exp-card {
-    background: #f3f3f3;
-    padding: 30px;
-    border-radius: 20px;
-
-    opacity: 0;
-    transform: translateY(60px);
-    transition: all 0.8s ease;
-}
-
-.exp-card.visible {
-    opacity: 1;
-    transform: translateY(0);
+    display: grid;
+    grid-template-columns: 92px minmax(0, 1fr) minmax(180px, 280px);
+    column-gap: 22px;
+    row-gap: 0;
+    align-items: center;
+    padding: 22px 8px;
+    border-bottom: 1px solid #dedede;
+    background: transparent;
+    color: #111;
+    transition: background 0.55s cubic-bezier(.22, .61, .36, 1), color 0.45s ease, padding 0.55s cubic-bezier(.22, .61, .36, 1), border-color 0.45s ease;
 }
 
 .exp-date {
+    grid-column: 1;
+    grid-row: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    font-size: 13px;
     font-weight: 600;
-    margin-bottom: 10px;
+    letter-spacing: 0.01em;
+    line-height: 1.15;
 }
 
-.exp-content h3 {
+.exp-id {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.exp-id h3 {
     margin: 0;
-    font-size: 18px;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.exp-id p {
+    margin: 4px 0 0;
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    opacity: 0.72;
+}
+
+.exp-tags {
+    position: relative;
+    z-index: 1;
+    grid-column: 3;
+    grid-row: 1;
+    justify-self: end;
+    align-self: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    transition: opacity 0.4s ease, transform 0.45s cubic-bezier(.22, .61, .36, 1);
+}
+
+.exp-tags li {
+    padding: 6px 12px;
+    border: 1px solid currentColor;
+    border-radius: 999px;
+    font-size: 12px;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+.exp-detail {
+    grid-column: 3;
+    grid-row: 1;
+    align-self: center;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transform: translateY(16px);
+    pointer-events: none;
+    transition: max-height 0.55s cubic-bezier(.22, .61, .36, 1), opacity 0.45s ease 0.05s, transform 0.55s cubic-bezier(.22, .61, .36, 1);
+}
+
+.exp-detail p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.45;
+    letter-spacing: 0;
+    text-transform: none;
+}
+
+.exp-card:hover,
+.exp-card:focus-within {
+    grid-template-columns: 92px minmax(0, 1fr) minmax(220px, 1.15fr);
+    align-items: start;
+    padding: 28px 22px 26px;
+    background: #111;
+    color: #fff;
+    border-color: transparent;
+}
+
+.exp-card:hover .exp-tags,
+.exp-card:focus-within .exp-tags {
+    grid-column: 2;
+    grid-row: 2;
+    justify-content: flex-start;
+    margin-top: 16px;
+    opacity: 1;
+    transform: none;
+}
+
+.exp-card:hover .exp-detail,
+.exp-card:focus-within .exp-detail {
+    max-height: 160px;
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .experience-character {
@@ -396,6 +489,200 @@ html::-webkit-scrollbar {
 .experience-character.visible {
     right: -10px; 
     opacity: 1;
+}
+
+/* ================= WORKFLOW ================= */
+
+.workflow {
+    height: 320vh;
+    background: #fff;
+    position: relative;
+}
+
+.workflow-sticky {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow: hidden;
+    background: #fff;
+}
+
+.workflow-title {
+    position: absolute;
+    right: 5vw;
+    top: 50%;
+    z-index: 3;
+    margin: 0;
+    transform: translateY(-50%);
+    font-size: clamp(42px, 4.6vw, 76px);
+    font-weight: 700;
+    line-height: 0.92;
+    letter-spacing: -0.04em;
+    text-align: right;
+    color: #111;
+}
+
+.workflow-title span {
+    display: block;
+    margin-bottom: 10px;
+    color: #4F5BDB;
+    font-size: 0.34em;
+    letter-spacing: 0.08em;
+}
+
+.workflow-stroke {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 74%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.workflow-stroke path {
+    fill: none;
+    stroke: #4F5BDB;
+    stroke-width: 118;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.workflow-steps {
+    position: absolute;
+    inset: 0 26% 0 0;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    pointer-events: none;
+}
+
+.workflow-step {
+    position: absolute;
+    left: var(--x);
+    top: var(--y);
+    width: min(220px, 26%);
+    color: #fff;
+    transform: translateY(-50%);
+}
+
+.wf-kicker,
+.wf-line {
+    display: block;
+    overflow: hidden;
+    margin: 0;
+}
+
+.wf-kicker span,
+.wf-line span {
+    display: block;
+    transform: translateY(120%);
+}
+
+.wf-kicker {
+    margin-bottom: 6px;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    opacity: 0.85;
+}
+
+.wf-line {
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.25;
+}
+
+.wf-line + .wf-line {
+    margin-top: 2px;
+    font-size: 13px;
+    font-weight: 400;
+}
+
+@media (max-width: 900px) {
+    .experience-cards {
+        width: 100%;
+    }
+
+    .exp-card,
+    .exp-card:hover,
+    .exp-card:focus-within {
+        grid-template-columns: 78px minmax(0, 1fr);
+    }
+
+    .exp-tags,
+    .exp-card:hover .exp-tags,
+    .exp-card:focus-within .exp-tags {
+        grid-column: 2;
+        grid-row: 2;
+        justify-content: flex-start;
+        margin-top: 12px;
+    }
+
+    .exp-detail,
+    .exp-card:hover .exp-detail,
+    .exp-card:focus-within .exp-detail {
+        grid-column: 1 / -1;
+        grid-row: 3;
+        margin-top: 12px;
+    }
+
+    .workflow {
+        height: auto;
+    }
+
+    .workflow-sticky {
+        position: relative;
+        height: auto;
+        min-height: 100vh;
+        padding: 80px 24px 40px;
+    }
+
+    .workflow-title {
+        position: relative;
+        right: auto;
+        top: auto;
+        transform: none;
+        text-align: left;
+        margin-bottom: 28px;
+    }
+
+    .workflow-stroke,
+    .workflow-steps {
+        position: relative;
+        width: 100%;
+        inset: auto;
+    }
+
+    .workflow-stroke {
+        height: 70vh;
+    }
+
+    .workflow-steps {
+        position: absolute;
+        inset: auto 0 40px 0;
+        height: 70vh;
+    }
+
+    .workflow-step {
+        width: 42%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .workflow {
+        height: auto;
+    }
+
+    .workflow-sticky {
+        position: relative;
+        height: auto;
+        min-height: 100vh;
+    }
+
+    .wf-kicker span,
+    .wf-line span {
+        transform: none;
+    }
 }
 
 /* ================= FUN FACT  ================= */

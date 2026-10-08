@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="landing-active">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -9,24 +9,50 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@800&family=Space+Grotesk:wght@700&family=Oswald:wght@700&family=Montserrat:wght@800&family=Bebas+Neue&display=swap" rel="stylesheet">
 </head>
 
-<body id="home">
-    <!-- ===== INTRO ===== -->
-<div class="intro-overlay" id="introOverlay">
-    <div class="intro-content">
-        <h1 class="intro-title">ARIEL BOURGEAT</h1>
-        <p class="intro-sub">PORTAFOLIO</p>
-        <p class = "intro-sub">WELCOME</p>
+<body id="home" class="landing-active">
+
+<div class="landing" id="landing">
+    <p class="landing-kicker">
+        <span id="landingTyped"></span><span class="landing-caret" aria-hidden="true">|</span>
+    </p>
+
+    <div class="landing-stage">
+        <p class="landing-side landing-side-left">Ariel</p>
+
+        <div class="landing-center" id="landingCenter">
+            <div class="landing-logo" id="landingLogo">
+                <img src="Images/Profile.png" alt="Ariel Bourgeat">
+                <p>Scroll Down.</p>
+            </div>
+            <div class="landing-stack" id="landingStack"></div>
+        </div>
+
+        <p class="landing-side landing-side-right">Bourgeat.</p>
     </div>
 
-    <svg class="intro-shape" viewBox="0 0 1440 320" preserveAspectRatio="none">
-        <path id="introPath"
-            d="M0,0 L1440,0 L1440,320 
-            Q1200,260 1000,300 
-            Q800,340 600,300 
-            Q400,260 200,300 
-            Q100,320 0,280 Z" />
-    </svg>
+    <div class="landing-quote" id="landingQuote">
+        <img src="Images/ariel-bourgeat-alines-building-1.jpg" alt="Isometric building and car">
+        <div class="landing-quote-scrim" id="landingScrim"></div>
+        <blockquote class="landing-quote-text" id="landingQuoteText">
+            “Everything is designed.<br>
+            Few things are designed well.”
+            <span>— Brian Reed</span>
+        </blockquote>
+    </div>
 </div>
+
+<noscript>
+    <style>
+        .landing { display: none !important; }
+        html.landing-active,
+        html.landing-active body { overflow: auto; }
+        body.landing-active .nav,
+        body.landing-active .role,
+        body.landing-active .hero-quote,
+        body.landing-active .intro-text > *,
+        body.landing-active .intro-right { opacity: 1; pointer-events: auto; }
+    </style>
+</noscript>
 
 <div class="custom-cursor"></div>
 <header class="nav">
@@ -231,7 +257,7 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="About.html">About Me</a></li>
                 <li><a href="projects.html">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="contact.html">Contact</a></li>
                 <li><a href="#">LinkedIn</a></li>
                 <li><a href="#">Github</a></li>
             </ul>
@@ -252,7 +278,7 @@
             <li><a href="#home" onclick="toggleMenu()">HOME.</a></li>
             <li><a href="About.html" onclick="toggleMenu()">ABOUT.</a></li>
             <li><a href="projects.html" onclick="toggleMenu()">PROJECTS.</a></li>
-            <li><a href="#contact" onclick="toggleMenu()">CONTACT.</a></li>
+            <li><a href="contact.html" onclick="toggleMenu()">CONTACT.</a></li>
         </ul>
 
 
