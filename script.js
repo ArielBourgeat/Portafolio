@@ -184,34 +184,6 @@ function createBubble() {
 
 if (bubbleContainer) setInterval(createBubble, 300);
 
-/* ===== NEWSLETTER ANIMATION ===== */
-
-const newsletter = document.querySelector(".newsletter-section");
-const words = document.querySelectorAll(".newsletter-title span");
-const line = document.querySelector(".newsletter-line");
-
-const observer2 = new IntersectionObserver((entries) => {
-    if (entries[0].isIntersecting) {
-
-        words.forEach((word, index) => {
-            setTimeout(() => {
-                word.style.transition = "0.8s cubic-bezier(.77,0,.18,1)";
-                word.style.transform = "translateX(0)";
-                word.style.opacity = "1";
-            }, index * 250);
-        });
-
-        setTimeout(() => {
-            line.style.transition = "0.8s cubic-bezier(.77,0,.18,1)";
-            line.style.transform = "scaleX(1)";
-        }, 600);
-
-        observer2.disconnect();
-    }
-}, { threshold: 0.4 });
-
-if (newsletter && line) observer2.observe(newsletter);
-
 });
 
 function initLanding() {

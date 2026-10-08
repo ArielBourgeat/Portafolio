@@ -180,8 +180,6 @@ Some features planned for future updates include:
 
     Improved mobile interaction support
 
-    Backend integration for the newsletter form
-
     Expanded interactive elements
 
     Additional animation and motion design
