@@ -274,6 +274,8 @@ function initLanding() {
     let busy = false;
     let queued = 0;
     let wheelAcc = 0;
+    let pendingDy = 0;
+    let dripRaf = 0;
     let finished = false;
     let kineticOn = false;
     let touchY = null;
@@ -570,15 +572,49 @@ function initLanding() {
 
     function normalizeDelta(e) {
         let dy = e.deltaY;
-        if (e.deltaMode === 1) dy *= 32;
+        if (e.deltaMode === 1) dy *= 16;
         else if (e.deltaMode === 2) dy *= window.innerHeight;
-        return Math.max(-110, Math.min(110, dy));
+        return Math.max(-140, Math.min(140, dy));
+    }
+
+    function startDrip() {
+        if (dripRaf || finished) return;
+
+        const loop = () => {
+            if (finished || Math.abs(pendingDy) < 0.6) {
+                pendingDy = 0;
+                dripRaf = 0;
+                return;
+            }
+
+            const release = Math.max(-24, Math.min(24, pendingDy * 0.16));
+            pendingDy -= release;
+            handleDelta(release);
+
+            if (finished) {
+                pendingDy = 0;
+                dripRaf = 0;
+                return;
+            }
+
+            dripRaf = requestAnimationFrame(loop);
+        };
+
+        dripRaf = requestAnimationFrame(loop);
     }
 
     function onWheel(e) {
         if (finished || e.ctrlKey) return;
         e.preventDefault();
-        handleDelta(normalizeDelta(e));
+        const dy = normalizeDelta(e);
+
+        if (Math.abs(dy) < 42) {
+            handleDelta(dy);
+            return;
+        }
+
+        pendingDy += dy;
+        startDrip();
     }
 
     function onTouchStart(e) {
@@ -598,10 +634,12 @@ function initLanding() {
         if (finished) return;
         if (e.key === "ArrowDown" || e.key === "PageDown" || e.key === " ") {
             e.preventDefault();
-            handleDelta(100);
+            pendingDy += 100;
+            startDrip();
         } else if (e.key === "ArrowUp" || e.key === "PageUp") {
             e.preventDefault();
-            handleDelta(-100);
+            pendingDy -= 100;
+            startDrip();
         }
     }
 
@@ -613,6 +651,9 @@ function initLanding() {
         if (finished) return;
         finished = true;
         clearTimeout(typeTimer);
+        pendingDy = 0;
+        if (dripRaf) cancelAnimationFrame(dripRaf);
+        dripRaf = 0;
         window.removeEventListener("wheel", onWheel);
         window.removeEventListener("touchstart", onTouchStart);
         window.removeEventListener("touchmove", onTouchMove);

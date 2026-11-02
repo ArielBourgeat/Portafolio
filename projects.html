@@ -13,89 +13,49 @@
 
 <div class="custom-cursor"></div>
 
-<header class="nav nav-projects">
+<header class="archive-top">
     <button type="button" class="menu" id="menuBtn" aria-label="Abrir menú">☰</button>
 
-    <h1 class="nav-projects-title">
-        PROJECT ARCHIVE →
-    </h1>
-
-    <div class="nav-projects-right">
-        <div class="nav-projects-clock" id="projectsClock"></div>
-        <a href="index.html" class="logo">
-            <img src="Images/logo blanco negro.png" alt="Ariel Bourgeat">
-        </a>
+    <div class="archive-top-right">
+        <div class="theme-toggle" role="group" aria-label="Tema">
+            <button type="button" class="theme-toggle-btn" data-theme="light">LIGHT</button>
+            <span>|</span>
+            <button type="button" class="theme-toggle-btn active" data-theme="dark">DARK</button>
+        </div>
+        <div class="archive-clock" id="projectsClock"></div>
     </div>
 </header>
 
-
-<main class="projects-main">
-
-    <!-- LIGHT / DARK MODE  -->
-    <div class="theme-toggle-vertical">
-        <button class="theme-toggle-btn" data-theme="light">LIGHT</button>
-        <p>|</p>
-        <button class="theme-toggle-btn active" data-theme="dark">DARK</button>
+<main id="archiveView">
+    <div class="archive-intro" id="archiveIntro">
+        <h1>PROJECT ARCHIVE</h1>
+        <p>SELECTED WORKS.</p>
+        <br>
+        <p>Scroll down to see more.</p>
     </div>
-
-    <!-- ===== VERTICAL  CAROUSEL ===== -->
-
-    <section class="projects-carousel-wrapper">
-        <div class="projects-carousel-window">
-            <div class="projects-carousel-track" id="carouselTrack">
-
-                <a href="project-cave.html" class="project-card" data-title="Stylized Cave &amp; Town. 2024.">
-                    <img src="Images/cave2.jpg" alt="Stylized Cave &amp; Town project thumbnail">
-                    <button class="project-review-btn">REVIEW</button>
-                </a>
-
-                <a href="project-horror.html" class="project-card" data-title="Horror Movie Poster. 2025.">
-                    <img src="Images/Poster-Pelicula-de-terror.png" alt="Horror movie poster project thumbnail">
-                    <button class="project-review-btn">REVIEW</button>
-                </a>
-
-                <a href="project-fitme.html" class="project-card" data-title="FitMe Magazine Cover. 2025.">
-                    <img src="Images/FitMeMagazine.png" alt="FitMe Magazine project thumbnail">
-                    <button class="project-review-btn">REVIEW</button>
-                </a>
-
-                <a href="project-aliens.html" class="project-card" data-title="Aliens Building Visual. 2023.">
-                    <img src="Images/ariel-bourgeat-alines-building-1.jpg" alt="Aliens Building project thumbnail">
-                    <button class="project-review-btn">REVIEW</button>
-                </a>
-
-                <a href="project-tbhc.html" class="project-card" data-title="TBHC Illustration. 2024.">
-                    <img src="Images/ariel-bourgeat-tbhc.jpg" alt="TBHC illustration project thumbnail">
-                    <button class="project-review-btn">REVIEW</button>
-                </a>
-
-                <a href="project-app.html" class="project-card" data-title="Fitness and organization App Concept. 2024.">
-                    <img src="Images/AppFit1.jpeg" alt="Fitness and organization App Concept project thumbnail">
-                    <button class="project-review-btn">REVIEW</button>
-                </a>
-
-                <a href="project-foto.html" class="project-card" data-title="Photography Portfolio. 2025.">
-                    <img src="Images/foto2.png" alt="Photography">
-                    <button class="project-review-btn">REVIEW</button>
-                </a>
-
-            </div>
-        </div>
-
-        <div class="project-title-container">
-            <p id="projectTitle" class="project-title-text"></p>
-        </div>
-    </section>
-
+    <div class="collage" id="collage"></div>
+    <div class="category-nav" id="categoryNav" aria-hidden="true"></div>
 </main>
 
-<!-- Overlay Menu -->
+<main id="detailView" hidden>
+    <div class="detail-copy" id="detailCopy"></div>
+    <div class="detail-stage">
+        <div class="detail-scroll" id="detailScroll"></div>
+    </div>
+    <p class="detail-cat" id="detailCat"></p>
+    <div class="detail-map" id="detailMap">
+        <div class="detail-map-scale" id="detailMapScale"></div>
+        <div class="detail-map-frame" id="detailMapFrame"></div>
+    </div>
+</main>
+
+<p class="project-mark" id="projectMark"></p>
+
 <div class="menu-overlay" id="menuOverlay">
     <div class="menu-header">
         <button class="menu-close same-spot" onclick="toggleMenu()">✕</button>
         <h1>ARIEL BOURGEAT</h1>
     </div>
-
 
     <div class="menu-content">
         <ul class="menu-links">
@@ -105,16 +65,14 @@
             <li><a href="contact.html" onclick="toggleMenu()">CONTACT.</a></li>
         </ul>
 
-
         <div class="menu-visuals">
             <div class="binary-bg" id="binaryBg">
                 <span>0</span><span>1</span><span>1</span><span>0</span><span>1</span><span>0</span>
                 <span>1</span><span>0</span><span>0</span><span>1</span><span>1</span><span>0</span>
                 <span>0</span><span>1</span><span>1</span><span>0</span><span>1</span><span>0</span>
             </div>
-
             <div class="menu-character">
-                <img src="Images/logo blanco negro.png" alt="Logoblanconegro" class="">
+                <img src="Images/logo blanco negro.png" alt="Logoblanconegro">
             </div>
         </div>
     </div>

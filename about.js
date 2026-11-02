@@ -56,6 +56,13 @@ document.addEventListener("DOMContentLoaded", () => {
         observer.observe(experienceSection);
     }
 
+    const scrollHint = document.querySelector(".about-scroll-hint");
+    if (scrollHint) {
+        window.addEventListener("scroll", () => {
+            scrollHint.classList.toggle("is-hidden", window.scrollY > 24);
+        }, { passive: true });
+    }
+
     const workflow = document.getElementById("workflow");
     const brush = document.getElementById("workflowBrush");
     const workflowSteps = [...document.querySelectorAll(".workflow-step")];
